@@ -1,9 +1,9 @@
-name: GitHub Actions with schedule Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions with schedule 🚀
+name: GitHub Actions with ls -ltr Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions with ls -ltr 🚀
 #on: [push]
 on:
   schedule:
-    - cron: "18 * * * *"
+    - cron: "35 * * * *"
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -17,5 +17,5 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}
+          ls -ltr ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
